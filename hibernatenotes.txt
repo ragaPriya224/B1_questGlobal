@@ -1,0 +1,188 @@
+GET  - read
+PUT   - update
+POST  - create
+DELETE - delete 
+-----------------
+maven 
+---------------
+client, server
+response, request
+---------------
+-------
+
+In case of jdbc
+
+
+1 read 
+1 write  10seconds
+
+but, if u use jpa, 
+
+write when needed
+reads from cache 
+faster : 
+''
+-------------
+RELATIONAL DB
+ postgres
+h2db
+mysql
+oracle
+
+
+h2db -> RDB 
+java written
+super easy to do setup/install
+lght weight, so less resources 
+-> not used for production
+-> only for development purpose 
+
+H2db -> 1. in memory 2. server mode
+----------------
+
+
+new maven project -> groupid, artifact id......
+Dependencies to be added :
+
+1. JPA interface
+2. JPA implementation (hibernate....)
+
+But, we don't need both. 
+1 dependency (hibernate ) is enough as of now.  -ADDED
+2. need a driver - to communicate with DB
+
+
+TO DO:
+1. tell where the DB is ...
+2. how to connect with DB
+as of now, dep knows how to talk to DB,
+Doesn't know where the DB 
+
+
+Credentials: username /pwd
+
+------------
+
+1. create a emp class
+2.  create a emp instance
+3.  have jpa, save that emp instance in db 
+
+When it comes to jpa, we  wanna deal with class, objects, not sql queries 
+
+
+JPA does lot of  intelligent defaults. 
+It's gonna auto map props to columns 
+USed annotations:
+
+@Entity
+@Table(name = "EMPLOYEE_DATA_MB")
+@Id
+-------------
+Entity Manager -> it's  service , jpa provides which manages our entity .
+Entity ? -> data holder, jpa needs to deals with 
+              it has to take obj instances to db and vice versa 
+
+EntityManagerFactor -> Entity Manager -> entityTransaction
+@Table -> does map to existing table / create new table as well if not exists
+
+After all this, we need transactin
+
+how to create transaction???
+1. by getting transaction object
+2. starting  and ending transaction 
+
+
+------------------
+
+
+Dialect: 
+
+This is a way to specify what kind of sql queries, you need to write . 
+bcoz there can be small differences in sql based on db . 
+
+----
+@Table(name = "EMPLOYEE_DATA_MB")  -> name is optional 
+@Table(name = "EMPLOYEE_DATA_MB", schema = "emp_schema")
+//catalog
+@Basic
+	@Column(name = "emp_name")
+	@Column(unique = true)
+	@Column(unique = true, length =  12)
+	@Column(unique = true, length =  12, nullable = false)
+	@Column(unique = true, length =  12, insertable = false)
+      @Column(unique = true, length =  12, updatable = false)
+
+	@Temporal(TemporalType.DATE)
+	private Date dob;
+
+@Temporal(TemporalType.TIME)
+	private Date dob;
+
+// java.sql.Date just represent DATE without time information 
+while java.util.Date represents both Date and Time information.
+
+    	@Temporal(TemporalType.TIMESTAMP)
+	private Date dob;
+
+
+	@Enumerated(EnumType.ORDINAL)
+	private EmployeeType type;
+
+     @Enumerated(EnumType.STRING)
+	private EmployeeType type;
+
+
+Transient -> where u don't want something to be saved 
+
+	@Transient
+	private String xyz;
+
+
+private transient String xyz;   -> not recommended
+@Basic   Vs @Transient
+save          don''t save 
+-------------------
+
+
+<property name="hibernate.hbm2ddl.auto" value="update" />
+<property name="hibernate.hbm2ddl.auto" value="validate" />
+<property name="hibernate.hbm2ddl.auto" value="none" />
+<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+<property name="hibernate.hbm2ddl.auto" value="create" />
+
+ value="validate"
+ It will validate whether the table definitions in db matches with the entity definitions 
+ It will not change anything.. no write operations
+ 
+ 
+ value = "update"
+ 
+ It is not gonna drop
+ It'll do update(changing)
+ 
+  
+ value = "create"
+ 
+ -> create everything from scratch 
+ 
+ 
+ Diff:
+ create - drop: when persistance is closed, all data elements be wiped away
+ create          when persistance is closed, all data elements NOT  wiped away
+ 
+ hbm2ddl.auto create-drop :
+If the value is create-drop then, Hibernate first checks for a table and do the necessary operations and finally drops the table after all the operations were completed.
+ hbm2ddl.auto Create :
+If the value is CREATE then the hibernate first drops the existing tables data and structure, then creates new tables and executes the operations on the newly created tables.
+------------------------------
+
+
+create-drop -> drop, create, drop
+create      -> drop, create
+update      - > update
+validate    -> no writing
+none        -> nothing 
+
+
+
+
