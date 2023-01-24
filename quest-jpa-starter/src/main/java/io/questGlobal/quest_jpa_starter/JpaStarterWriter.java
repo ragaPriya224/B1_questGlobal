@@ -75,15 +75,34 @@ public class JpaStarterWriter {
 		e.setPaystub(payStubList);
 //		e.addPayStub(p1);
 		
+		EmailGroup g1 = new EmailGroup();
+		g1.setName("company group discussions");
+				
+		EmailGroup g2 = new EmailGroup();
+		g2.setName("engineering project");
+		
+		
+		g1.addMember(e);
+		g1.addMember(e2);
+		
+		e.addEmailSubscription(g1);
+		e.addEmailSubscription(g2);
+		e2.addEmailSubscription(g1);
+		g2.addMember(e);
+		
 		EntityTransaction t = em.getTransaction();//gives me the transaction instance
 		t.begin();
 		em.persist(e);
 		em.persist(e2);
+		
 		em.persist(card1);
 		em.persist(card2);
 
 		em.persist(p1);
 		em.persist(p2);
+		
+		em.persist(g1);
+		em.persist(g2);
 		//		em.remove(e);
 		t.commit();
 		em.close();
