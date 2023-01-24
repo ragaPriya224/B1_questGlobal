@@ -6,3 +6,4 @@ FULLTIME,
 CONTRACT
 
 }
+

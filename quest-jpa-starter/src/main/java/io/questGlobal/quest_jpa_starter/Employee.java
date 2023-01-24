@@ -6,7 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,14 +18,17 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name ="EMPLOYEE_DATA")
 public class Employee {
-	
+
 	@Id
+	//	@GeneratedValue(strategy = GenerationType.SEQUENCE) 
+	@GeneratedValue(strategy = GenerationType.SEQUENCE) 
 	private int id;
+
 	@Column(name = "employee_name")
 	private String name;
 
 	private int age;
-//	@Column(unique = true,length=10,nullable = true,updatable=false)
+	//	@Column(unique = true,length=10,nullable = true,updatable=false)
 	@Column(updatable=false)
 	private String ssn;
 	@Temporal(TemporalType.TIMESTAMP)
@@ -30,6 +36,9 @@ public class Employee {
 	@Enumerated(EnumType.STRING)//default behaviour
 	private EmployeeType type;
 	
+	@OneToOne
+	private AccessCard card;
+
 	public Date getDob() {
 		return dob;
 	}
@@ -65,6 +74,18 @@ public class Employee {
 	}
 	public void setType(EmployeeType type) {
 		this.type = type;
+	}
+
+	public AccessCard getCard() {
+		return card;
+	}
+	public void setCard(AccessCard card) {
+		this.card = card;
+	}
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", ssn=" + ssn + ", dob=" + dob + ", type="
+				+ type + "]";
 	}
 
 }
