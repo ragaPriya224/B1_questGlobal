@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class AccessCard {
@@ -16,6 +17,9 @@ public class AccessCard {
 	private Date issuedDate;
 	private boolean isActive;
 	private String firmwareVersion;
+	
+	@OneToOne(mappedBy = "card")
+	private Employee owner;
 	
 	public int getId() {
 		return id;
@@ -40,6 +44,18 @@ public class AccessCard {
 	}
 	public void setFirmwareVersion(String firmwareVersion) {
 		this.firmwareVersion = firmwareVersion;
+	}
+	
+	public Employee getOwner() {
+		return owner;
+	}
+	public void setOwner(Employee owner) {
+		this.owner = owner;
+	}
+	@Override
+	public String toString() {
+		return "AccessCard [id=" + id + ", issuedDate=" + issuedDate + ", isActive=" + isActive + ", firmwareVersion="
+				+ firmwareVersion + "]";
 	}
 	
 	//1 access card for 1 employee

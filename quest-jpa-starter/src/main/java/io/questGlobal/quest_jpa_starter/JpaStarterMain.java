@@ -43,6 +43,13 @@ public class JpaStarterMain {
 //		e2.setAccessCardId(card2.getId());
 		e.setCard(card1);
 		e2.setCard(card2);
+		
+		card1.setOwner(e);//cyclical relationship
+		card2.setOwner(e2);
+		
+		System.out.println("******");
+		
+		System.out.println(card1.getOwner());
 		//		 Employee e = em.find(Employee.class, 1);
 		////		 e.setAge(44);
 		//		 System.out.println(e);

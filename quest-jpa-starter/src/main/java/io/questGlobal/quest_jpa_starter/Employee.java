@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -82,10 +83,15 @@ public class Employee {
 	public void setCard(AccessCard card) {
 		this.card = card;
 	}
+//	@Override
+//	public String toString() {
+//		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", ssn=" + ssn + ", dob=" + dob + ", type="
+//				+ type + "]";
+//	}
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", ssn=" + ssn + ", dob=" + dob + ", type="
-				+ type + "]";
+				+ type + ", card=" + card + "]";
 	}
 
 }
