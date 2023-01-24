@@ -1,15 +1,17 @@
 package io.questGlobal.quest_jpa_starter;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -36,10 +38,13 @@ public class Employee {
 	private Date dob;
 	@Enumerated(EnumType.STRING)//default behaviour
 	private EmployeeType type;
-	
+
 	@OneToOne
 	private AccessCard card;
-
+	
+	@OneToMany(mappedBy = "e")
+	private List<PayStub> paystub ;
+	
 	public Date getDob() {
 		return dob;
 	}
@@ -80,14 +85,30 @@ public class Employee {
 	public AccessCard getCard() {
 		return card;
 	}
+//	public void addPayStub(PayStub paystub) {
+//		this.paystub.add(paystub);
+//	}
+	
+	
+	public List<PayStub> getPaystub() {
+		return paystub;
+	}
+	public void setPaystub(List<PayStub> paystub) {
+		this.paystub = paystub;
+	}
 	public void setCard(AccessCard card) {
 		this.card = card;
 	}
-//	@Override
-//	public String toString() {
-//		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", ssn=" + ssn + ", dob=" + dob + ", type="
-//				+ type + "]";
-//	}
+	//	@Override
+	//	public String toString() {
+	//		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", ssn=" + ssn + ", dob=" + dob + ", type="
+	//				+ type + "]";
+	//	}
+	//	@Override
+	//	public String toString() {
+	//		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", ssn=" + ssn + ", dob=" + dob + ", type="
+	//				+ type + ", card=" + card + "]";
+	//	}
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", ssn=" + ssn + ", dob=" + dob + ", type="
