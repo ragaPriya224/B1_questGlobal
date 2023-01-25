@@ -34,4 +34,20 @@
         
         for mapping, directions, target advertising, social network, online games, gpay, banking apps etc
         
+        
+   html5 before -> cookies 5mb
+   web storage -> session storage, local storage
+   data -> name/value pairs 
+   
+   session storage:
+   
+   local storage:
+   
+   
+   
+   <html manifest = "demo.manifest">
+    
+    
+   
+        
     
