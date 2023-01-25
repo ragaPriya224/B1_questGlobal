@@ -6,15 +6,91 @@
 </head>
 
 <body>
+    <!-- FORM  -->
+    <!-- <form action=”next.php” method=”POST”> -->
+    <form>
+        <!-- TEXT FIELDS -->
+        <label>First name </label>
+        <input type="text" name = "fname">
+        <label>last name </label>
+        <input type="text" name = "lname"><br>
+        <!-- PASSWORD FIELDS -->
+        <label>password </label>
+        <input type="password" name = "pwd"><br>
+        <!--  NUMBER -->
+        <label>Phone number</label>
+        <input type="number" name = "phone"><br>
+        <label>intro</label><br>
+        <!-- RADIO BUTTON, ONLY ONE OPTION SELECTED -->
+        <input type = "radio" name = "drink" value="tea">TEA<br>
+        <input type = "radio" name = "drink" value="coffee">COFFEE<br>
+         <!-- TEXT AREA-->
+        <textarea rows="4" cols="50"></textarea><br>
+        <!-- CHECK BOXES -->
+        <input type ="checkbox"  name = "profile" value="fb">fb<br>
+        <input type = "checkbox" name = "profile" value="insta">instagram<br>
+        <input type = "checkbox" name = "profile" value="linkedin">linkedin<br>
+        <br>
+        <!-- field set  -> to group related elements in a form -->
+<fieldset>
+    <legend>PERSONAL DETAIL</legend>
+    NAME:<input type="text" name = "name">
+    EMAIL:<input type="text" name = "email">
+    NICKNAME:<input type="text" name = "nickname">
+</fieldset><br>
+ <!-- SELECT  -> DROP DOWN -->
+<select>
+    <option value="samsung">SAMSUNG</option>
+    <option value="honor">HONOR </option>
+    <option value="apple">APPLE </option>
+</select><br>
+ <!-- OPTGROUP -> GROUPING THE RELATED OPTIONS -->
+ <select>
+    <optgroup label="samsung">
+        <option value="flip">FLIP</option>
+        <option value="edge">EDGE </option>
+    </optgroup>
+    <optgroup label="redmi">
+        <option value="note">note</option>
+        <option value="8">8 </option>
+    </optgroup>
+    <optgroup label="iphone">
+        <option value="14">14</option>
+        <option value="15">15 </option>
+    </optgroup>
+</select><br>
+<!-- BUTTON -->
+<button type="button">CLICK HERE</button>
+<br>
+<br>
+<!-- datalist -->
+<input list="browsers">
+<datalist id="browsers">
+    <option value="edge"></option>
+    <option value="chrome"></option>
+    <option value="cat"></option>
+    <option value="safari"></option>
+    <option value="firefox"></option>
+    <option value="sanfrancisco"></option>
+</datalist><br>
+<br>
+<label>username</label>
+<input id="username" name="username" pattern=".{5}" title="minimum 5 character should be entered" required>
+<br>
+<label>Phone number</label>
+        <input type="number" name = "phone" required><br>
+ <!-- SUBMIT BUTTON-->
+ <input type ="submit" value="submit">
+    </form>
     <!-- these are header tags -->
     <div>
-    <h1>hello team</h1>
-    <h2>hello team</h2>
-    <h3>hello team</h3>
-    <h4>hello team</h4>
-    <h5>hello team</h5>
-    <h6>hello team</h6>
-</div>
+        <h1>hello team</h1>
+        <h2>hello team</h2>
+        <h3>hello team</h3>
+        <h4>hello team</h4>
+        <h5>hello team</h5>
+        <h6>hello team</h6>
+    </div>
     <p>There are several “<b>Top Java Blogs</b>” pages out there – <i>but</i> also a lot of noise.
         <hr>
         Some of these blogs are <u>abandoned</u> with the last post a few years old, some have simply switched focused
@@ -63,15 +139,16 @@
         </ul>
         <dl><!--  description list -->
             <dt> <!--  name-->
-pizza
+                pizza
             </dt>
             <dd> <!--  description-->
-round bread with base and toppings
+                round bread with base and toppings
             </dd>
             <dt> apple juice</dt>
-           <dd> fresh juice made from apple</dd>
+            <dd> fresh juice made from apple</dd>
         </dl>
     </table>
+
 </body>
 
 </html>
