@@ -25,3 +25,11 @@
         <body>
         </body>
     </html>
+    
+    ---------overview features of html5 
+    
+    
+    GEOLOCATION -> locate the users position 
+        ip address, cell tower, wifi connection, gps etc 
+        
+    
