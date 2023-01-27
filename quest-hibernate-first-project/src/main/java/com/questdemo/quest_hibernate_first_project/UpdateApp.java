@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import com.questdemo.quest_hibernate_first_project.entity.Song;
+import com.questdemo.quest_hibernate_first_project.utility.HibernateUtils;
 
 /**
  * Hello world!
@@ -14,15 +15,8 @@ import com.questdemo.quest_hibernate_first_project.entity.Song;
 public class UpdateApp {
 	public static void main( String[] args ) {
 
-		//change song name of id 1  to upper case
-		//create the configuration
-		Configuration configuration = new Configuration();
-		configuration.configure("hibernate.cfg.xml");
-		configuration.addAnnotatedClass(Song.class);
+		SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
 
-		//				configuration.addAnnotatedClass(Song.class);
-		//create the session factory 
-		SessionFactory sessionFactory = configuration.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 
 
@@ -39,4 +33,5 @@ public class UpdateApp {
 		session.close();
 
 	}
+
 }
