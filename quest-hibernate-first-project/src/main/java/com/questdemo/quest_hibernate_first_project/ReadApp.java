@@ -24,7 +24,7 @@ public class ReadApp {
 		//create the session factory 
 		SessionFactory sessionFactory = configuration.buildSessionFactory();
 		Session session = sessionFactory.openSession();
-		Song song=session.get(Song.class, 2);
+		Song song=session.load(Song.class, 3);
 		System.out.println(song);
 
 	}
