@@ -1,4 +1,4 @@
-package com.questdemo.quest_hibernate_first_project;
+package com.questdemo.quest_hibernate_first_project.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
