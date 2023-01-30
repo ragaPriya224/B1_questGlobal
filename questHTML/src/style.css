@@ -1,0 +1,17 @@
+h1,h2{
+   color:red;
+}
+
+#id_1 {
+    color:brown;
+}
+
+p{
+    color:brown;
+}
+
+.bgcolor{
+    color:yellow;
+    font-weight: 500;
+}
+
