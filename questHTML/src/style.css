@@ -53,7 +53,10 @@ h1,h2{
  input:focus{
     background-color: orange;
  }
-
+ /* letter-spacing: 10px; */
+ /* word-spacing: 10px; */
+    /* line-height: 2; */
+    /* white-space: nowrap; */
   /* background-image:  TRY*/
   /* BORDER-COLLAPSE  TRY  */
 
