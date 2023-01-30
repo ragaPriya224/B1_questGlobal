@@ -1,7 +1,10 @@
 h1,h2{
     color:red;
  }
- 
+ body {
+    font-family: "Audiowide", sans-serif;
+  }
+  
  #id_1 {
      color:brown;
      background-color: blue;
@@ -15,12 +18,28 @@ h1,h2{
      text-align: center;
      border-style: dashed;
      border: solid 1px black;
-    
+
+     /* all sides */
+     /* padding:25px; */
+
+/* 25px -> top,bottom   10px -> left and right */
+     /* padding:25px 10px; */
+
+     /* 25px -> top   10px -> left and right   50px -> bottom */
+     /* padding:25px 10px 50px; */
+
+     /* padding-top:50px; */
  }
  h2{
     color:black;
     text-decoration: underline wavy red ;
- }
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-family: Arial, Helvetica, sans-serif;
+    /* fallback */
+
+}
+ 
  .bgcolor{
      color:yellow;
      font-weight: 500;
@@ -28,9 +47,16 @@ h1,h2{
  #textbox{
    width:50px;
    height:50px;
+   margin-left:50px;
+ }
+
+ input:focus{
+    background-color: orange;
  }
 
   /* background-image:  TRY*/
   /* BORDER-COLLAPSE  TRY  */
 
   /* TEXT-TRANSFORM */
+  /* vertical align, padding */
+  /* margins, margin-right,left,top,bottom */
