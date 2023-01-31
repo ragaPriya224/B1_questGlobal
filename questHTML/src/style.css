@@ -1,9 +1,14 @@
 h1,h2{
     color:red;
  }
- body {
+ div{
+    position:absolute;
+    width:98%;
+    height:98%;
+ }
+ /* body {
     font-family: "Audiowide", sans-serif;
-  }
+  } */
   
  #id_1 {
      color:brown;
@@ -52,6 +57,41 @@ h1,h2{
 
  input:focus{
     background-color: orange;
+ }
+ table,th,td {
+    border:2px solid ;
+    border-collapse: separate;
+    text-align: right;
+    vertical-align: top;
+ }
+
+ th,td{
+    padding:20px;
+ }
+ tr:hover{
+    background-color: red;
+ }
+ th{
+    background-color: blue;
+ }
+ tr:nth-child(odd){
+    background-color: grey;
+ }
+ .items{
+/* list-style-type: upper-roman; */
+/* list-style-type: none; */
+list-style-position: outside;
+ }
+ #overflow_Demo{
+    height:50px;
+    width:100px;
+    border:2px solid;
+    overflow: scroll;
+ }
+ textarea{
+    height:40px;
+    width:200px;
+    /* overflow:hidden; */
  }
  /* letter-spacing: 10px; */
  /* word-spacing: 10px; */
