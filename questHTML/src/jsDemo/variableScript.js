@@ -58,12 +58,18 @@ function print(num,name='js') {
 // }
 
 //prompt pop up box 
-p=prompt('Enter the Value', ' ')
-if(p== 06){
-alert('Welcome')
-}else{
-alert('Thank you')
+// p=prompt('Enter the Value', ' ')
+// if(p== 06){
+// alert('Welcome')
+// }else{
+// alert('Thank you')
+// }
+function transferValue(){
+    console.log("button clicked");
+    var result = document.getElementById("fname").value;
+    document.getElementById("lname").value = result;
 }
-
-
+function dataChanged(){
+    alert('field value changed');
+}
 
