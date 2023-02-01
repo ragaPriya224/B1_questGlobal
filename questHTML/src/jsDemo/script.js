@@ -69,4 +69,3 @@ for( var b = 0; b<4;b++){
 }
 console.log(b); //4
 
-typ
