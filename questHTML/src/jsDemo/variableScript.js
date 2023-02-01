@@ -72,4 +72,19 @@ function transferValue(){
 function dataChanged(){
     alert('field value changed');
 }
+function phoneChange(){
+    alert('phone preference changed');
+    document.getElementById('hide_btn').style.display="none";
+    
+    document.getElementById('lname').style.color="blue";
+
+}
+
+function dblClickAlert (){
+    alert("on dbl click");
+}
+
+function resizeWindow(){
+alert('window is resized');
+}
 

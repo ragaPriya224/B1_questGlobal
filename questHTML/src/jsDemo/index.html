@@ -8,12 +8,12 @@
 
 </head>
 
-<body>
+<body onresize="resizeWindow()">
     <div id="div_1">
         <form>
             <!-- TEXT FIELDS -->
             <label>First name </label>
-            <input type="text" name="fname" id="fname"><br>
+            <input class ="bg textColor" type="text" name="fname" id="fname"><br>
             <!-- <input type="button" value="clickMe" /><br><br> -->
             
 
@@ -24,7 +24,14 @@
             <!--  NUMBER -->
         <label>Phone number</label>
         <input type="number" name = "phone"  onchange="dataChanged()"><br>
-        </form>
+        <select id="phoneSelect"   onchange="phoneChange()">
+            <option value="samsung">SAMSUNG</option>
+            <option value="honor">HONOR </option>
+            <option value="apple">APPLE </option>
+        </select><br>
+        <button type ="button" id="hide_btn" ondblclick="dblClickAlert()"">hideME</button>
+    
+    </form>
     </div>
 
 </body>
