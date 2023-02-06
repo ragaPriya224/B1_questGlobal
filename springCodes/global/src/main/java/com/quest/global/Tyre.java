@@ -4,11 +4,7 @@ public class Tyre {
 
 	
 
-//constructor 
-	public Tyre(String brand) {
-		super();
-		this.brand = brand;
-	}
+
 
 	private String brand;
 	//getter setter
@@ -23,7 +19,7 @@ public class Tyre {
 
 	@Override
 	public String toString() {
-		return "Tyre [brand=" + brand + "]";
+		return "Tyre";
 	}
 	
 	
