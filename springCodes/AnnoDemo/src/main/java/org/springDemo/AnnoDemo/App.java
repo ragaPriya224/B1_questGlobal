@@ -16,8 +16,9 @@ public class App {
 //        Samsung s = new Samsung();
 //        s.config();
         
-        ApplicationContext factory = new AnnotationConfigApplicationContext();
+        ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
         Samsung s23= factory.getBean(Samsung.class);
+        s23.config();
     }
 }
 //diff ways to get bean
