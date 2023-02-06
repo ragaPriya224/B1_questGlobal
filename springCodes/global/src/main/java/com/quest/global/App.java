@@ -14,8 +14,11 @@ public class App {
         System.out.println( "Hello World!" );
         
         ApplicationContext context = new ClassPathXmlApplicationContext("Spring.xml");
-        Vehicle  obj = (Vehicle) context.getBean("car");//car available, car. bike na, bike 
-        obj.drive();
+//        Vehicle  obj = (Vehicle) context.getBean("car");//car available, car. bike na, bike 
+//        obj.drive();
+        
+        Tyre t = (Tyre) context.getBean("tyre");
+        System.out.println(t);
     }
 }
 
