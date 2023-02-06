@@ -3,7 +3,7 @@ package org.springDemo.AnnoDemo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component  //non qualified and decapitalized
 public class Samsung {
 	
 	@Autowired
