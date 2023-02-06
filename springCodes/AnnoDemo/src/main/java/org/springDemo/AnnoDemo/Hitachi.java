@@ -1,6 +1,7 @@
 package org.springDemo.AnnoDemo;
 //mobile processor 
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
