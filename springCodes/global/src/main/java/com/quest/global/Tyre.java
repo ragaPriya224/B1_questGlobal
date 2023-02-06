@@ -1,10 +1,9 @@
 package com.quest.global;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Tyre {
-
-	
-
-
 
 	private String brand;
 	//getter setter
