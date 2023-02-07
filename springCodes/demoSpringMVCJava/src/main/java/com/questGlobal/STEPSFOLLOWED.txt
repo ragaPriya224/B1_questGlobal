@@ -1,0 +1,15 @@
+create mvn project 
+targetruntime-> add server
+in index.jsp -> form, and mention all the details
+
+Create AddController  ->  @Controller, @RequestMapping, used @RequestParam, return type as modelAndView, in modelandview object, we set 
+ 			setting object and view name(mention jsp name)
+
+create that jsp file..mention something like key.. (what we mentioned in addcontroller) , mention isElIgnored="false" 
+
+create a frontcontroller -> extends AbstractAnnotationConfig.....
+				1 -> getServletMappings -> map url
+				2 -> getRootConfigClasses -> mention config class
+
+create a configFile.java -> implements WebMvcConfigurer
+						@EnableWebMvc, @ComponentScan,@Configuration
