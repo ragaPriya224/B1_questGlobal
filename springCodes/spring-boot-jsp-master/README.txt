@@ -1,3 +1,5 @@
+THIS PROJECT IS DEMO FOR SPRING BOOT CRUD OPERATIONS WITH JSP
+
 run this command in console
       mvn clean install
    OR
